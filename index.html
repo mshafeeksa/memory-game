@@ -2,12 +2,41 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="icon" type="image/svg+xml" href="/memory-game-icon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + React</title>
+    <title>Memory Game</title>
   </head>
-  <body>
-    <div id="root"></div>
+  <body style="display: none;" onload="document.body.removeAttribute('style');">
+    <div class="header container">
+      <div class="logo-side">
+        <img src="./src/assets/memory-game-icon.png" alt="" class="logo">
+        <h1 class="name">The Memory Ninja</h1>
+      </div>
+      <div class="score-side">
+        <div class="score-container">
+          <div class="score-text">Current score: </div>
+          <div id="current-score" class="score"></div>
+        </div>
+        <div class="score-container">
+          <div class="score-text">Best score:</div>
+          <div id="best-score" class="score"></div>
+        </div>
+      </div>
+    </div>
+    <div id="root">
+      
+    </div>
+    <div class="game-over hide">
+      <h2 class="game-over-text">Game Over</h2>
+      <button class="reload">Retry</button>
+    </div>
+    <div class="player-won hide">
+      <h2 class="game-over-text">You win!!</h2>
+      <button class="reload">Play Again</button>
+    </div>
+    <footer>Mohammed Shafeek, 2023.
+      <a href="https://github.com/mshafeeksa/memory-game" target="_blank" rel="noreferrer noopener" class="github"><img src="./src/assets/github.svg" alt="Github"></a>
+    </footer>
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>

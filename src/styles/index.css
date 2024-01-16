@@ -1,0 +1,179 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,300;0,400;0,500;0,700;0,900;1,300;1,400;1,900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html{
+    height: 100vh;
+    height: 100svh;
+    width: 100%;
+    font-family: 'Kanit', Arial, Helvetica, sans-serif;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.header{
+    height: max(150px, 15%);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-side{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.score-side{
+    flex-shrink: 0;
+    margin-left: 24px;
+}
+
+.logo-side h1{
+    font-size: 3rem;
+    font-style: italic;
+}
+
+.logo{
+    width: auto;
+    height: 100px;
+}
+
+.container{
+    width: 90%;
+}
+
+#root{
+    flex: 1;
+    height: 100%;
+    width: 100%;
+}
+
+footer{
+    height: 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+footer img{
+    width: auto;
+    height: 2rem;
+}
+
+.score{
+    min-width: 40px;
+}
+
+.score-container{
+    display: flex;
+    gap: 24px;
+    font-size: 1.5rem;
+}
+
+.score-text{
+    min-width: 150px;
+}
+
+#root{
+    background: rgb(249, 211, 66);
+    background: linear-gradient(90deg, rgba(249, 211, 66, 1) 0%, rgba(43, 42, 38, 1) 100%);
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.game-over, .player-won{
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    background-color: azure;
+    width: min(400px , 80%);
+    height: min(300px , 30%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    animation: pop-in 0.25s linear 0s 1 forwards;
+    opacity: 0;
+}
+
+.game-over-text{
+    font-size: 3rem;
+}
+
+.reload{
+    font-size: 1.4rem;
+    padding: 1% 2%;
+    cursor: pointer;
+    margin-top: 24px;
+}
+
+@keyframes pop-in {
+    100%{
+        opacity: 1;
+    }
+}
+
+@media (max-width: 1030px) {
+    .logo-side h1 {
+        font-size: 1.8rem;
+    }
+
+    .score-container {
+        font-size: 1rem;
+        gap: 8px;
+     }
+    
+    .score-text {
+        min-width: 50px;
+    }
+    .logo {
+        height: 2.4rem;
+    }
+}
+
+@media (max-width:600px) {
+    .logo-side h1 {
+        font-size: 1.2rem;
+    }
+    .logo {
+        height: 1.8rem;
+    }
+    .header{
+        flex-direction: column;
+        justify-content: center;
+        height: 80px;
+    }
+    .score-container {
+        font-size: 0.9rem;
+    }
+    footer {
+        height: 2rem;
+    }
+
+    footer img {
+        height: 0.8rem;   
+    }
+    .game-over-text {
+        font-size: 1.4rem;
+    }
+
+    .reload {
+        font-size: 1rem;
+    }
+}

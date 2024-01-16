@@ -1,0 +1,78 @@
+.hide, #main-container.hide, .game-over.hide, .player-won.hide{
+    display: none;
+}
+
+.main-container{
+    width: 80%;
+    height: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    display: grid;
+    grid-template: repeat(2,1fr)/repeat(6,1fr);
+    gap: 3%;
+}
+
+.card{
+    border: 1px solid black;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    overflow: hidden;
+    transition: all 0.15s ease;
+    cursor: pointer;
+}
+
+.card:hover{
+    transform: perspective(500px) translateZ(25px);
+    border-color: #ff0;
+}
+
+.card:hover .poke-name{
+    background-color: #ff0;
+    color: #000;
+}
+
+.card:hover .poke-image{
+    /* transform: perspective(500px) translateZ(100px); */
+}
+
+.poke-image{
+    width: 80%;
+    height: 70%;
+    flex: 1;
+    transition: all 0.15s ease;
+    z-index: 8;
+}
+
+.poke-name{
+    width: 100%;
+    background-color: #333;
+    color: #fff;
+    height: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+    transition: all 0.15s ease;
+    z-index: 10;
+}
+
+@media (max-width: 1030px) {
+    .main-container{
+        grid-template: repeat(3, 1fr)/repeat(4, 1fr);
+        height: 70%;
+    }
+}
+
+@media (max-width:600px) {
+    .main-container {
+        grid-template: repeat(4, 1fr)/repeat(3, 1fr);
+        height: 100%;
+        padding: 12px;
+    }
+    .poke-name{
+        font-size: 0.55rem;
+    }
+}
